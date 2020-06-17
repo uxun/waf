@@ -113,7 +113,7 @@ function set_bind_ip(bind_type)
 	-- 获取ip地址
 	local ip = get_client_ip()
 
-	local ip_bind_key = "lmb:rate:ipbind:"..ip
+	local ip_bind_key = "lgg:rate:ipbind:"..ip
 
 	-- IP封禁
 	cache:set(ip_bind_key, bind_type)
@@ -436,10 +436,10 @@ function iplimit()
 	local ip = get_client_ip()
 
 	-- redis key
-	local ip_bind_key        = "lmb:rate:ipbind:"..ip
-	local ip_minute_count_key = "lmb:rate:minute:count:"..ip
-	local ip_hour_count_key   = "lmb:rate:hour:count:"..os.date("%Y%m%d%H")..":"..ip
-	local ip_day_count_key    = "lmb:rate:day:count:"..os.date("%Y%m%d")..":"..ip
+	local ip_bind_key        = "lgg:rate:ipbind:"..ip
+	local ip_minute_count_key = "lgg:rate:minute:count:"..ip
+	local ip_hour_count_key   = "lgg:rate:hour:count:"..os.date("%Y%m%d%H")..":"..ip
+	local ip_day_count_key    = "lgg:rate:day:count:"..os.date("%Y%m%d")..":"..ip
 
 	-- ip封禁key
 	local is_bind, err = cache:get(ip_bind_key)
